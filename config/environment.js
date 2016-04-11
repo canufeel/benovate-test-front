@@ -42,6 +42,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.APP.API_HOST = 'https://salty-inlet-86626.herokuapp.com/';
 
   }
 
