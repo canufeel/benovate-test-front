@@ -1,3 +1,8 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+{{#paper-card}}
+	{{#paper-card-content}}
+		<h2 id="title">Тестовое приложение ИНН</h2>
+		{{innaccuser/create-innaccuser reloadModel=(action "reloadModel")}}
+		{{innaccuser/transfer-innaccuser reloadModel=(action "reloadModel")}}
+		{{innaccuser/list-innaccuser model=model}}
+	{{/paper-card-content}}
+{{/paper-card}}

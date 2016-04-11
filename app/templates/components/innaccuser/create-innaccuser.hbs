@@ -1,0 +1,18 @@
+{{#paper-card}}
+	{{#paper-card-content}}
+	<h2>Создать новый ИНН</h2>
+	{{paper-input value=inn label="ИНН"}}
+	{{paper-input min="0" min-errortext="Введите число больше 0." value=amount label="Сумма"}}
+	{{#paper-button disabled=isCreateDisabled action=(action "createUser")}}Создать{{/paper-button}}
+
+	{{#if errored}}
+		{{#paper-button icon-button=true action="clearError"}}{{paper-icon "error" classNames="fail"}}{{/paper-button}}
+	{{/if}}
+
+	{{#if succeed}}
+		{{#paper-button icon-button=true action="clearSuccess"}}{{paper-icon "check-circle" classNames="success" action="clearSuccess"}}
+		{{/paper-button}}
+	{{/if}}
+	
+	{{/paper-card-content}}
+{{/paper-card}}

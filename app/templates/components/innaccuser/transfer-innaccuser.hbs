@@ -1,0 +1,19 @@
+{{#paper-card}}
+	{{#paper-card-content}}
+		<h2>Произвести перевод</h2>
+
+		{{paper-autocomplete fullTextSearch=true floating=true model=sender delay="300" minLength="3" source=innSuggestions lookupKey="inn" cache-miss="requestInn" placeholder="ИНН отправителя" notFoundMessage="Ничего не найдено"}}
+		{{paper-autocomplete fullTextSearch=true floating=true model=reciever delay="300" minLength="3" source=innSuggestions lookupKey="inn" cache-miss="requestInn" placeholder="ИНН получателя" notFoundMessage="Ничего не найдено"}}
+		{{paper-input type="number" min="0" min-errortext="Введите число больше 0." value=amount label="Сумма" customValidation=amountValid}}
+		{{#paper-button disabled=sendDisabled action="send"}}Отправить{{/paper-button}}
+
+		{{#if errored}}
+			{{#paper-button icon-button=true action="clearError"}}{{paper-icon "error" classNames="fail"}}{{/paper-button}}
+		{{/if}}
+
+		{{#if succeed}}
+			{{#paper-button icon-button=true action="clearSuccess"}}{{paper-icon "check-circle" classNames="success" action="clearSuccess"}}
+			{{/paper-button}}
+		{{/if}}
+	{{/paper-card-content}}
+{{/paper-card}}

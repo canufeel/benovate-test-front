@@ -1,0 +1,15 @@
+{{#paper-card}}
+	{{#paper-card-content}}
+		<h2>Список аккаунтов</h2>
+  		{{#paper-list}}
+  			{{#each model as |user|}}
+  				{{#paper-item class="md-3-line"}}
+  					<div class="md-list-item-text">
+          				<h3>{{user.inn}}</h3>
+          				<h4>{{user.account}} Руб.</h4>
+        			</div>
+  				{{/paper-item}}
+  			{{/each}}
+  		{{/paper-list}}
+  	{{/paper-card-content}}
+{{/paper-card}}
